@@ -1,0 +1,180 @@
+body {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  background-color: #fafafa;
+  color: #212121;
+  cursor: default;
+  font-family: 'Times New Roman', serif;
+  font-size: 24px;
+  margin: 0;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.content {
+  position: absolute;
+  width: 100%;  
+}
+
+.content-item {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content-item.hide {
+  opacity: 0;
+}
+
+.content-hidden {
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.panel {
+  border: 3px solid #212121;
+  border-radius: 3px;
+  margin: 24px auto;
+  position: relative;
+  width: 576px;
+}
+
+.panel.no-border {
+  border: 0;
+}
+
+.panel-image {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.panel-caption {
+  background-color: #fafafa;
+  border: 2px solid #212121;
+  border-radius: 3px;
+  left: 0;
+  line-height: 36px;
+  padding: 12px 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.choice {
+  background-color: #212121;
+  border-radius: 3px;
+  line-height: 36px;
+  margin: 24px auto;
+  padding: 24px;
+  width: 534px;
+}
+
+.choice-title {
+  color: #fafafa;
+}
+
+.choice-option {
+  background-color: #fafafa;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 18px;
+  padding: 12px 24px;
+  position: relative;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.choice-option::before {
+  background-color: #fafafa;
+  content: '';
+  position: absolute;
+}
+
+.choice-option.selected {
+  background-color: #ffa726;
+  pointer-events: none;
+}
+
+.choice-option:not(.selected).hover:hover,
+.choice-option:not(.selected).active {
+  color: #9e9e9e;
+}
+
+.button-container {
+  margin: 48px auto 168px;
+  width: 582px;
+}
+
+.button-container::after {
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.button {
+  background-color: #e0e0e0;
+  border: 2px solid #212121;
+  cursor: pointer;
+  line-height: 48px;
+  text-align: center;
+}
+
+.button.hover:hover,
+.button.active {
+  opacity: 0.6;
+}
+
+.button.disabled {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.next-button {
+  border-radius: 3px;
+  border-right-width: 0;
+  float: right;
+  margin-right: 24px;
+  padding-left: 10px;
+  position: relative;
+  width: 122px;
+}
+
+.next-button::before {
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  border-right: 2px solid #212121;
+  border-top: 2px solid #212121;
+  content: '';
+  height: 35px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate(111.8px, 5.5px) rotate(45deg);
+  transform: translate(111.8px, 5.5px) rotate(45deg);
+  width: 35px;
+}
+
+.next-button::after {
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  content: '';
+  height: 48px;
+  margin-right: 3px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 27px;
+}
+
+.restart-button {
+  border-radius: 24px;
+  margin: 0 auto;
+  width: 168px;
+}
