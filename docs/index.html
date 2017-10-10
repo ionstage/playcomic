@@ -14,16 +14,23 @@
     })();
   </script>
   <title></title>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
   <div class="content-hidden"></div>
+  <script src="js/webfontloader.js"></script>
   <script src="js/es6-promise.auto.min.js"></script>
   <script src="js/content.js"></script>
   <script src="js/app.js"></script>
   <script>
-    app.scene.load('start');
+    WebFont.load({
+      google: {
+        families: ['Noto Serif']
+      },
+      fontactive: function() {
+        app.scene.load('start');
+      },
+    });
   </script>
 </body>
 </html>
