@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <script>
+    (function() {
+      var ua = window.navigator.userAgent;
+      if (ua.indexOf('iPhone') !== -1 || ua.indexOf('iPod') !== -1 ||
+          (ua.indexOf('Android') !== -1 && ua.indexOf('Mobile') !== -1)) {
+        var el = document.querySelector('meta[name=viewport]');
+        el.setAttribute('content', 'width=624');
+      }
+    })();
+  </script>
+  <title></title>
+  <link rel="stylesheet" href="../css/app.css">
+  <style>
+    body {
+      font-family: Georgia, 'ヒラギノ明朝 ProN W6', 'HiraMinPro-W6', 'Sawarabi Mincho', serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-hidden"></div>
+  <script src="../js/webfontloader.js"></script>
+  <script src="../js/es6-promise.auto.min.js"></script>
+  <script src="../js/content.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    WebFont.load({
+      custom: {
+        families: ['Sawarabi Mincho'],
+        urls: ['http://fonts.googleapis.com/earlyaccess/sawarabimincho.css'],
+      },
+      active: function() {
+        app.scene.load('start');
+      },
+    });
+  </script>
+</body>
+</html>
