@@ -289,8 +289,9 @@
       dom.toggleClass(this.element, 'no-border', !this.hasBorder);
       this.captions.forEach(function(caption) {
         var el = dom.render('<div class="panel-caption"></div>');
+        var text = (caption.hasOwnProperty('html') ? caption.html : caption.text.replace(/\n/g, '<br>'));
         dom.translate(el, caption.x, caption.y);
-        dom.html(el, caption.text.replace(/\n/g, '<br>'));
+        dom.html(el, text);
         dom.append(this.element, el);
       }.bind(this));
     };
