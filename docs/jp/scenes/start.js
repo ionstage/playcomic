@@ -19,11 +19,11 @@
     ];
 
     var choice = scene.create('choice', {
-      title: 'Choose from options',
+      title: '<ruby>選択<rt>せんたく</rt></ruby>してください',
       options: [
-        '1. Option 1',
-        '2. Option 2',
-        '3. Option 3',
+        '１．オプション１',
+        '２．オプション２',
+        '３．オプション３',
       ],
     });
 

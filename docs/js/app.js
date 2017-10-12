@@ -314,10 +314,10 @@
     });
 
     Choice.prototype.redraw = function() {
-      dom.text(dom.find(this.element, '.choice-title'), this.title);
+      dom.html(dom.find(this.element, '.choice-title'), this.title);
       var ontap = this.ontap.bind(this);
       this.optionComponents = this.options.map(function(option) {
-        var component = new Choice.Option({ text: option });
+        var component = new Choice.Option({ html: option });
         component.on('tap', ontap);
         dom.append(this.element, component.element);
         return component;
@@ -348,7 +348,7 @@
           element: this.element,
           tapper: this.ontap.bind(this),
         });
-        this.text = props.text;
+        this.html = props.html;
       });
 
       Option.prototype.selected = function(value) {
@@ -356,7 +356,7 @@
       };
 
       Option.prototype.oninit = function() {
-        dom.text(this.element, this.text);
+        dom.html(this.element, this.html);
         dom.toggleClass(this.element, 'hover', !dom.supportsTouch());
       };
 
