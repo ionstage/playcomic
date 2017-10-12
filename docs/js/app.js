@@ -426,6 +426,7 @@
         tapper: this.ontap.bind(this),
       });
       this.disabled(!!props.disabled);
+      this.label = (props.label || 'Restart');
     });
 
     RestartButton.prototype.disabled = function(value) {
@@ -434,6 +435,7 @@
 
     RestartButton.prototype.oninit = function() {
       dom.toggleClass(this.button.element, 'hover', !dom.supportsTouch());
+      dom.html(dom.find(this.element, '.button'), this.label);
     };
 
     RestartButton.prototype.ontap = function() {
@@ -442,7 +444,7 @@
 
     RestartButton.HTML_TEXT = [
       '<div class="button-container content-item">',
-        '<div class="button restart-button">Restart</div>',
+        '<div class="button restart-button"></div>',
       '</div>',
     ].join('');
 

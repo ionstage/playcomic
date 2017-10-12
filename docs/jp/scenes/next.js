@@ -9,7 +9,9 @@
       ],
     });
 
-    var restartButton = scene.create('restart-button');
+    var restartButton = scene.create('restart-button', {
+      label: 'もういちど',
+    });
 
     restartButton.on('tap', function() {
       scene.restart();
