@@ -457,6 +457,7 @@
         tapper: this.ontap.bind(this),
       });
       this.disabled(!!props.disabled);
+      this.label = (props.label || 'Next');
     });
 
     NextButton.prototype.disabled = function(value) {
@@ -465,6 +466,7 @@
 
     NextButton.prototype.oninit = function() {
       dom.toggleClass(this.button.element, 'hover', !dom.supportsTouch());
+      dom.html(dom.find(this.element, '.button'), this.label);
     };
 
     NextButton.prototype.ontap = function() {
@@ -473,7 +475,7 @@
 
     NextButton.HTML_TEXT = [
       '<div class="button-container content-item">',
-        '<div class="button next-button">Next</div>',
+        '<div class="button next-button"></div>',
       '</div>',
     ].join('');
 

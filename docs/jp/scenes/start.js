@@ -27,7 +27,10 @@
       ],
     });
 
-    var nextButton = scene.create('next-button', { disabled: true });
+    var nextButton = scene.create('next-button', {
+      disabled: true,
+      label: '<ruby>次<rt>つぎ</rt>へ</ruby>',
+    });
 
     choice.on('select', function(index) {
       nextButton.disabled(false);
