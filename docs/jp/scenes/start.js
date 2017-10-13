@@ -5,15 +5,15 @@
         height: 360,
         image: 'image',
         captions: [
-          { x : 48, y: 72, text: '<div><ruby>見出<rt>みだ</rt></ruby>し１</div>' },
-          { x : 360, y: 240, text: '<div><ruby>見出<rt>みだ</rt></ruby>し２</div>' },
+          { x: 48, y: 72, text: '<div><ruby>見出<rt>みだ</rt></ruby>し１</div>' },
+          { x: 360, y: 240, text: '<div><ruby>見出<rt>みだ</rt></ruby>し２</div>' },
         ],
       }),
       scene.create('panel', {
         height: 360,
         border: false,
         captions: [
-          { x : 168, y: 96, text: '<div><ruby>見出<rt>みだ</rt></ruby>し３</div>' },
+          { x: 168, y: 96, text: '<div><ruby>見出<rt>みだ</rt></ruby>し３</div>' },
         ],
       }),
     ];

@@ -5,7 +5,7 @@
       border: false,
       image: 'image',
       captions: [
-        { x : 24, y: 96, text: 'Selected: Option ' + (context.selectedIndex + 1) },
+        { x: 24, y: 96, text: 'Selected: Option ' + (context.selectedIndex + 1) },
       ],
     });
 
