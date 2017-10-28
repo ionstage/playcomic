@@ -514,7 +514,7 @@
         dom.append(contentElement, component.element);
       });
 
-      var showComponent = function(index) {
+      var showComponent = function(self, index) {
         var component = components[index];
         var now = Date.now();
         component.load().then(function() {
@@ -523,13 +523,15 @@
           setTimeout(function() {
             dom.toggleClass(component.element, 'hide', false);
             if (index < components.length - 1) {
-              showComponent(index + 1);
+              showComponent(self, index + 1);
             }
           }, delay);
+        }).catch(function(error) {
+          content.error(error, self.current, self.context);
         });
       };
 
-      showComponent(0);
+      showComponent(this, 0);
     };
 
     Scene.prototype.load = function(name) {
@@ -542,7 +544,9 @@
           dom.scrollTo(0, 0);
         }, dom.supportsTouch() ? 100 : 0);
         dom.remove(dom.find(dom.body(), '.content-hidden'));
-      });
+      }).catch(function(error) {
+        content.error(error, this.current, this.context);
+      }.bind(this));
     };
 
     Scene.prototype.clear = function() {

@@ -20,5 +20,9 @@
     data.selectedIndex = -1;
   };
 
+  content.error = function(error, current, context) {
+    alert(error);
+  };
+
   app.content = content;
 })(this.app || (this.app = {}));
