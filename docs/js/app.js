@@ -43,10 +43,6 @@
       return el;
     };
 
-    dom.text = function(el, s) {
-      el.textContent = s;
-    };
-
     dom.html = function(el, s) {
       el.innerHTML = s;
     };
